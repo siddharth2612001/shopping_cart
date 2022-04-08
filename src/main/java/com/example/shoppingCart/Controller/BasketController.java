@@ -41,8 +41,9 @@ public class BasketController {
     }
 
     @GetMapping("/basket")
-    public List<Basket> getCartItems(){
-        return this.basketRepository.findAll();
-    }
+    public ResponseEntity<Object> getCartItems() {
+        List<Basket> result = shoppingcartservice.showBasket();
 
+        return ApiResponse.generateResponse("success", HttpStatus.OK, result);
+    }
 }

@@ -36,4 +36,8 @@ public class Shoppingcartservice {
     public List<Product> showAllProducts() {
         return productRepository.findAll();
     }
+
+    public List<Basket> showBasket(){
+        return basketRepository.findAll();
+    }
 }
